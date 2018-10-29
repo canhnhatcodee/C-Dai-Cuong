@@ -1,0 +1,75 @@
+--------------------------------------------------------Bài 1 --------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	printf ("                                        TAT CA DEU TINH THEO DON VI CENTIMET\n");
+	printf ("                                                    Canh Nhat Codee\n");
+	float canh1 , canh2 , canh3 , dientich , chieucao, nuachuvi;
+	printf("Nhap vao chieu dai cua canh thu nhat\t");
+	scanf("%f",&canh1);
+	printf("Nhap vao chieu dai cua canh thu hai\t");
+	scanf("%f",&canh2);
+	printf("Nhap vao chieu dai cua canh thu ba\t");
+	scanf("%f",&canh3);
+	nuachuvi = (canh1 + canh2 + canh3)/2;
+	dientich =sqrt(nuachuvi * (nuachuvi - canh1) * (nuachuvi - canh3) * (nuachuvi - canh2));
+	printf("Dien tich hinh tam giac la %f \n" ,dientich );
+	printf("Chieu cao lan luot cua tam giac la %f , %f , %f" , dientich/canh1 , dientich/canh2 , dientich/canh3);
+	return 0;
+}
+-----------------------------------------------------Bài 3 --------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int giaTriBieuThuc(float x);
+int main(int argc, char *argv[]) {
+	printf ("                                        TINH GIA TRI TRUNG BINH CUA BIEU THUC\n");
+	printf ("                                                    Canh Nhat Codee\n");
+	float soPhanTu , bien, GiaTri2 , tong = 0 , giaTriTrungBinh;
+	int i=1;
+	printf("Nhap so gia tri x ban muon tinh f(x) \t");
+	scanf("%f" , &soPhanTu);
+	for(i ; i <= soPhanTu ; i++){
+	printf("Nhap gia tri thu %d cua x : \t ",i);
+	scanf("%f", &bien);
+	GiaTri2 = giaTriBieuThuc(bien);
+	tong += GiaTri2;
+	}
+	giaTriTrungBinh = tong/soPhanTu;
+	printf("\nGia tri trung binh la %f\n" , giaTriTrungBinh);
+	return 0;
+}
+int giaTriBieuThuc(float x){
+	float Giatri ;
+	Giatri = pow(x,7)+ 5*pow((pow(x,5)+3*pow(x,3)+ 2),1/3) + 12;
+	printf("Gia tri cua F(x) la %f\n", Giatri);
+	return Giatri;
+	}
+  -----------------------------------------------Bài 4----------------------------------------------------
+  #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	float a , b ,x ,giaTri;
+	float PI = 2 * acos(0);
+	printf("Nhap gia tri cua x\t");
+	scanf("%f" , &x);
+	a = sqrt(pow(2,x)+PI);
+	printf("Gia tri cua a la %f\n",a);
+	b = log(exp(x+1.23) + 1);
+	printf("Gia tri cua b la %f\n",b);
+	float tuSo = cos(3*a) + pow((2*pow(x ,3)+x+1),1/5);
+	float mauSo = log(pow(3,pow(x,2))+ 2.14*b)/log(7);
+	giaTri = tuSo/mauSo;
+	printf("Gia tri cua bieu thuc la %f\n",giaTri);
+	return 0;
+}
